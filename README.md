@@ -1,4 +1,4 @@
-# Wikiedia Scraper
+# Wikipedia Scraper
 ### BeCode - Data Science and AI Bootcamp - Project 2
 
 This project fetches data about country leaders from https://country-leaders.onrender.com, fetches, cleans and adds a short introductory paragraph for each leader from their respective Wikipedia page.
@@ -11,11 +11,12 @@ The data is then saved in JSON format for easy access and later use.
   * Fetches country and leader data from the API and stores in a dictionary
   * Retrieves and cleans the first paragraph of the Wikipedia article for each country leader and adds paragraph to the dictionary
   * Saves the data in a `leaders.json` file
+* `wikipedia_scraper.ipynb`: The instructions and tasks for the project.
 
 ## Features
 1. **API Data Retrieval:** The script connects to an API that provides information about country leaders, organized by country.
 2. **Wikipedia Data Scraping and Cleaning:** For each leader, the script uses a session to retrieve and clean the first paragraph from their Wikipedia page.
-3. **JSON Output:** The final data, in the format of a dictionary, organized by country and including the respective Wikiedia snippets, is saved as a JSON file.
+3. **JSON Output:** The final data, in the format of a dictionary, organized by country and including the respective Wikipedia snippets, is saved as a JSON file.
 
 ## Usage
 
