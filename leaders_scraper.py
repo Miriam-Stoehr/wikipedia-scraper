@@ -69,6 +69,8 @@ def get_first_paragraph(wikipedia_url: str, session: requests.Session) -> Option
     Returns:
         Optional[str]: Cleaned first paragraph from the Wikipedia page, or None if not found.
     """
+    # Print wiki url
+    print(wikipedia_url)
 
     # Use session to make request
     req = session.get(wikipedia_url)
@@ -103,10 +105,10 @@ def get_leaders() -> dict:
     session = requests.Session()
 
     # Get Cookies
-    cookies = requests.get(cookie_url).cookies
+    cookies = session.get(cookie_url).cookies
     
     # Get Countries
-    countries = requests.get(countries_url, cookies=cookies).json()
+    countries = session.get(countries_url, cookies=cookies).json()
     
     # Initialize dictionary
     leaders_per_country = {}
@@ -115,13 +117,13 @@ def get_leaders() -> dict:
     for country in countries:
 
         # Check, if the cookies are expired (response code 403 instead of 200)
-        response = requests.get(leaders_url, cookies=cookies, params={"country":country})
+        response = session.get(leaders_url, cookies=cookies, params={"country":country})
 
         if response.status_code != 200:
             # Refresh cookies
-            cookies = requests.get(cookie_url).cookies
+            cookies = session.get(cookie_url).cookies
             # Renew request
-            leaders_per_country[country] = requests.get(leaders_url, cookies=cookies, params={"country": country}).json()
+            leaders_per_country[country] = session.get(leaders_url, cookies=cookies, params={"country": country}).json()
         else:
             # Use response data: Get leaders' data and add to dict
             leaders_per_country[country] = response.json()
@@ -159,9 +161,9 @@ def save(leaders_per_country: dict) -> None:
     
     # Check, if the content loaded is the same as the original dictionary
     if loaded_data == leaders_per_country:
-        print("Variable content matches. The file was saved and loaded successfully.")
+        print("The file was saved and checked successfully.")
     else:
-        print("Variable content does not match. There may be an issue with saving/loading.")
+        print("Error: Content of output file does not match. There may be an issue with saving/loading.")
 
 # Execute main()
 if __name__ == "__main__":
