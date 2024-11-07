@@ -161,7 +161,7 @@ def save(leaders_per_country: dict) -> None:
     
     # Check, if the content loaded is the same as the original dictionary
     if loaded_data == leaders_per_country:
-        print("The file was saved and checked successfully.")
+        print("The json file was saved and checked successfully.")
     else:
         print("Error: Content of output file does not match. There may be an issue with saving/loading.")
 

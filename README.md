@@ -3,7 +3,9 @@
 
 This project fetches data about country leaders from https://country-leaders.onrender.com, fetches, cleans and adds a short introductory paragraph for each leader from their respective Wikipedia page.
 
-The data is then saved in JSON format for easy access and later use.
+While running, the program outputs the wikipedia URLs used.
+
+The final dictionary data is then saved in JSON format for easy access and later use. The content of the output file is then reloaded and checked and a message confirms, if the execution has been successful.
 
 
 ## Project Structure
@@ -22,9 +24,15 @@ The data is then saved in JSON format for easy access and later use.
 
 Run the script to fetch data about country leaders, retrieve a short Wikipedia introduction and save everything to a JSON file:
 
-```python 
-python leaders_scraper.py
-```
+* For Windows:
+
+  ```python 
+  python leaders_scraper.py
+  ```
+* For Linux:
+  ```python
+  python3 leaders_scraper.py 
+  ```
 
 ## Code Overview - Main Functions
 
