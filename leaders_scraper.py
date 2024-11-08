@@ -150,11 +150,11 @@ def save(leaders_per_country: dict) -> None:
     """
 
     # Save dictionary to json file
-    with open ("leaders.json", "w") as json_file:
-        json.dump(leaders_per_country, json_file, indent=4)
+    with open ("leaders.json", "w", encoding="utf-8") as json_file:
+        json.dump(leaders_per_country, json_file, indent=4, ensure_ascii=False)
     
     # Read the data back from leaders.json
-    with open("leaders.json", "r") as json_file:
+    with open("leaders.json", "r", encoding="utf-8") as json_file:
         loaded_data = json.load(json_file)
     
     # Check, if the content loaded is the same as the original dictionary
@@ -162,6 +162,9 @@ def save(leaders_per_country: dict) -> None:
         print("The json file was saved and checked successfully.")
     else:
         print("Error: Content of output file does not match. There may be an issue with saving/loading.")
+
+    # Test
+    print(loaded_data)
 
 # Execute main()
 if __name__ == "__main__":
