@@ -69,8 +69,6 @@ def get_first_paragraph(wikipedia_url: str, session: requests.Session) -> Option
     Returns:
         Optional[str]: Cleaned first paragraph from the Wikipedia page, or None if not found.
     """
-    # Print wiki url
-    print(wikipedia_url)
 
     # Use session to make request
     req = session.get(wikipedia_url)

@@ -3,8 +3,6 @@
 
 This project fetches data about country leaders from https://country-leaders.onrender.com, fetches, cleans and adds a short introductory paragraph for each leader from their respective Wikipedia page.
 
-While running, the program outputs the wikipedia URLs used.
-
 The final dictionary data is then saved in JSON format for easy access and later use. The content of the output file is then reloaded and checked and a message confirms, if the execution has been successful.
 
 
