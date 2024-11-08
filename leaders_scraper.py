@@ -163,9 +163,6 @@ def save(leaders_per_country: dict) -> None:
     else:
         print("Error: Content of output file does not match. There may be an issue with saving/loading.")
 
-    # Test
-    print(loaded_data)
-
 # Execute main()
 if __name__ == "__main__":
     main()
